@@ -21,8 +21,9 @@ Vue.prototype.$echarts = echarts;
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 
-// axios.defaults.baseURL = 'https://result.eolinker.com/rvEju3Y2e4ed213a501dd3ebef6085cf162fa50a17619ba?uri='
-axios.defaults.baseURL = "/api";
+axios.defaults.baseURL =
+  "https://result.eolinker.com/REByVur452d182ac514f6233d9dab0089d297517a09c58b?uri=";
+// axios.defaults.baseURL = "/api";
 
 import store from "./store/store";
 new Vue({
