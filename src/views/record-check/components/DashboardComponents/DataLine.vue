@@ -10,10 +10,11 @@ var echarts = require("echarts");
 export default {
   data() {
     return {
-      // 参数定义
       echarts: "",
-      linedata: [-79, -79, -67, -78, -89, -79, -79, -67, -78, -89, -77, -79],
       linedata1: [
+        "-65",
+        "-65",
+        "-65",
         "-65",
         "-65",
         "-65",
@@ -34,6 +35,9 @@ export default {
         "-90",
         "-90",
         "-90",
+        "-90",
+        "-90",
+        "-90",
       ],
     };
   },
@@ -45,7 +49,7 @@ export default {
     });
   },
   created() {},
-  props: ["recordData"],
+  props: ["recordDataChild3"],
   methods: {
     initchart(id) {
       this.charts = echarts.init(document.getElementById(id));
@@ -65,15 +69,18 @@ export default {
             boundaryGap: false,
             type: "category",
             data: [
-              "10:09:01AM",
-              "10:32:22AM",
-              "10:47:17AM",
-              "11:02:22AM",
-              "11:17:34AM",
-              "11:32:22AM",
-              "11:47:14AM",
-              "12:02:51AM",
-              "12:17:05AM",
+              "01:00",
+              "02:00",
+              "03:00",
+              "04:00",
+              "05:00",
+              "06:00",
+              "07:00",
+              "08:00",
+              "09:00",
+              "10:00",
+              "11:00",
+              "12:00",
             ],
             name: "时间",
             nameLocation: "end",
@@ -90,7 +97,7 @@ export default {
         series: [
           {
             type: "line",
-            data: this.linedata,
+            data: this.recordDataChild3.recordTempatrueArray,
             areaStyle: { color: "#33ccff" },
             label: {
               show: true,
@@ -135,13 +142,13 @@ export default {
 <style  scoped>
 #RecorderData1 {
   position: relative;
-  top: -27px;
-  left: -36px;
-  width: 650px;
-  height: 470px;
+  top: -30px;
+  left: -32px;
+  width: 720px;
+  height: 490px;
 }
 .el-card {
-  width: 627px;
-  height: 450px;
+  width: 692px !important;
+  height: 450px !important;
 }
 </style>

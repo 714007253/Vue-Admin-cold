@@ -2,7 +2,7 @@
 <template>
   <div>
     <Breadcrumb></Breadcrumb>
-    <Dashboard :recordData="recordData"></Dashboard>
+    <Dashboard :recordData="recordDatas"></Dashboard>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import Dashboard from "./components/Dashboard.vue";
 export default {
   name: "",
   data() {
-    return { recordData: {} };
+    return { recordDatas: {} };
   },
 
   components: { Breadcrumb, Dashboard },
@@ -27,7 +27,7 @@ export default {
         "records/" + this.$route.params.id
       );
       if (res.meta.status !== 200) return this.$message.error("获取数据失败");
-      this.recordData = res.recordData;
+      this.recordDatas = res.recordData;
     },
   },
 };

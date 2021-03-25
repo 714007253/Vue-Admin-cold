@@ -28,7 +28,6 @@ export default {
     printData() {
       this.lineArr = this.recordData.recordMap.mapAO;
       this.container = this.recordData.id;
-      console.log(this.lineArr);
     },
     init() {
       this.map = new AMap.Map(this.recordData.id, {

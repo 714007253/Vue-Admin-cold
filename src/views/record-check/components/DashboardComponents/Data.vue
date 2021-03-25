@@ -15,22 +15,26 @@
       <el-divider> </el-divider>
       <div class="Data_elcard">
         <div>打点时间间隔:</div>
-        <div class="Data_elcard2">1s</div>
+        <div class="Data_elcard2">
+          {{ recordDataChild5.intervalOfManagement }}
+        </div>
       </div>
       <el-divider> </el-divider>
       <div class="Data_elcard">
         <div>打点总数:</div>
-        <div class="Data_elcard2">123</div>
+        <div class="Data_elcard2">{{ recordDataChild5.pointNum }}</div>
       </div>
       <el-divider> </el-divider>
       <div class="Data_elcard">
         <div>温度均值:</div>
-        <div class="Data_elcard2">-75℉</div>
+        <div class="Data_elcard2">
+          {{ recordDataChild5.meanvalueTempature }}
+        </div>
       </div>
       <el-divider> </el-divider>
       <div class="Data_elcard">
         <div>记录总时长:</div>
-        <div class="Data_elcard2">12h</div>
+        <div class="Data_elcard2">{{ recordDataChild5.totalTime }}</div>
       </div>
     </el-card>
   </div>
@@ -44,7 +48,7 @@ export default {
   },
 
   components: {},
-  props: ["recordData"],
+  props: ["recordDataChild5"],
 
   created() {},
 
@@ -52,9 +56,6 @@ export default {
 };
 </script>
 <style  scoped>
-.el-card {
-  height: 450px;
-}
 .Data_elcard {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -62,5 +63,8 @@ export default {
 }
 .Data_elcard2 {
   text-align: right;
+}
+.el-card {
+  height: 450px !important;
 }
 </style>

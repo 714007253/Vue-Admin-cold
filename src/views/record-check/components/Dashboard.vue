@@ -19,21 +19,19 @@
         <div class="grid_checkrecord_card">
           <div></div>
           <div>
-            <DataCard :recordData="recordData"></DataCard>
+            <DataCard v-if="flag1" :recordDataChild="recordData"></DataCard>
             <div class="grid_checkrecord_card2">
-              <el-card style="width: 627px; height: 450px">
-                <DataMap
-                  class="el-card_pandding"
-                  :recordData="recordData"
-                ></DataMap
-              ></el-card>
+              <DataMap v-if="flag2" :recordDataChild2="recordData"></DataMap>
               <div></div>
-              <DataLine :recordData="recordData"></DataLine>
+              <DataLine v-if="flag3" :recordDataChild3="recordData"></DataLine>
             </div>
             <div class="grid_checkrecord_card2">
-              <DataDangerTable :recordData="recordData"></DataDangerTable>
+              <DataDangerTable
+                v-if="flag4"
+                :recordDataChild4="recordData"
+              ></DataDangerTable>
               <div></div>
-              <Data :recordData="recordData"></Data>
+              <Data v-if="flag5" :recordDataChild5="recordData"></Data>
             </div>
           </div>
           <div></div>
@@ -53,13 +51,27 @@ import DataLine from "./DashboardComponents/DataLine";
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      flag1: false,
+      flag2: false,
+      flag3: false,
+      flag4: false,
+      flag5: false,
+    };
   },
 
   components: { DataCard, Data, DataDangerTable, DataMap, DataLine },
   props: ["recordData"],
   created() {},
-
+  mounted() {
+    setTimeout(() => {
+      this.flag1 = true;
+      this.flag2 = true;
+      this.flag3 = true;
+      this.flag4 = true;
+      this.flag5 = true;
+    }, 100);
+  },
   methods: {
     toCheckRecord() {
       this.$router.push({ path: `/checkRecord/${this.recordData.id}` });
@@ -91,12 +103,6 @@ export default {
     margin-top: 25px;
     display: grid;
     grid-template-columns: 4fr 1fr 4fr;
-    .el-card_pandding {
-      position: relative;
-      left: -20px;
-      top: -20px;
-      height: 450px;
-    }
   }
 }
 </style>

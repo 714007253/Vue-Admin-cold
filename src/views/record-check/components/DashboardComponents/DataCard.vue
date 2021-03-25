@@ -2,7 +2,7 @@
 <template>
   <div class="grid_Card_card">
     <el-card class="grid_Card_card2">
-      <div class="card_Data">{{ recordData.recordNowTempatrue }}</div>
+      <div class="card_Data">{{ recordDataChild.recordNowTempatrue }}</div>
       <div class="card_Data2">
         <el-image
           class="datacard_icon"
@@ -13,7 +13,7 @@
     </el-card>
     <div></div>
     <el-card class="grid_Card_card2">
-      <div class="card_Data">{{ recordData.maxTempature }}</div>
+      <div class="card_Data">{{ recordDataChild.maxTempature }}</div>
       <div class="card_Data2">
         <el-image
           class="datacard_icon"
@@ -24,7 +24,7 @@
     </el-card>
     <div></div>
     <el-card class="grid_Card_card2">
-      <div class="card_Data">{{ recordData.minTempature }}</div>
+      <div class="card_Data">{{ recordDataChild.minTempature }}</div>
       <div class="card_Data2">
         <el-image
           class="datacard_icon"
@@ -35,7 +35,7 @@
     </el-card>
     <div></div>
     <el-card class="grid_Card_card2">
-      <div class="card_Data">{{ recordData.alarmTotalTimes }}</div>
+      <div class="card_Data">{{ recordDataChild.alarmTotalTimes }}</div>
       <div class="card_Data2">
         <el-image
           class="datacard_icon"
@@ -55,7 +55,7 @@ export default {
   },
 
   components: {},
-  props: ["recordData"],
+  props: ["recordDataChild"],
   created() {},
 
   methods: {},
