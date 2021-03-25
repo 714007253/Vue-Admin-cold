@@ -15,6 +15,9 @@ Vue.use(Vuex);
 import AMap from "AMap";
 Vue.use(AMap);
 
+import htmlToPdf from "@/utils/htmlToPdf";
+
+Vue.use(htmlToPdf);
 Vue.use(Element);
 
 Vue.prototype.$echarts = echarts;

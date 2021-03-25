@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <el-card> <div id="RecorderData1"></div></el-card>
+    <el-card shadow="never"> <div id="RecorderData1"></div></el-card>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
     });
   },
   created() {},
-  props: ["recordDataChild3"],
+  props: ["recordData"],
   methods: {
     initchart(id) {
       this.charts = echarts.init(document.getElementById(id));
@@ -99,7 +99,7 @@ export default {
         series: [
           {
             type: "line",
-            data: this.recordDataChild3.recordTempatrueArray,
+            data: this.recordData.recordTempatrueArray,
 
             label: {
               show: true,
@@ -144,13 +144,9 @@ export default {
 <style  scoped>
 #RecorderData1 {
   position: relative;
-  top: -30px;
-  left: -32px;
-  width: 720px;
-  height: 490px;
-}
-.el-card {
-  width: 692px !important;
-  height: 450px !important;
+  left: -61px;
+
+  width: 1700px;
+  height: 500px;
 }
 </style>
